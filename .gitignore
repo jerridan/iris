@@ -11,3 +11,6 @@ logs
 pids
 *.pid
 *.seed
+
+## Private Data ##
+forecast_server.js
