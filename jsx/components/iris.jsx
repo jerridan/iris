@@ -1,17 +1,17 @@
 import React from 'react';
-import Immutable from 'immutable';
-import request from 'superagent';
+import Reflux from 'reflux';
 
-import Map from './map.jsx';
-import Geocoder from './geocoder.jsx';
+import PrimaryPanel from './primary-panel.jsx';
 
-import forecastActions from '../actions/forecast';
 import forecastStore from '../stores/forecast';
+import viewStore from '../stores/view';
 
 let Iris = React.createClass({
+  mixins: [Reflux.connect(forecastStore, 'forecastStore'),
+    Reflux.connect(viewStore, 'view')],
   render() {
-    return <div>
-      <Geocoder/>
+    return <div className="iris">
+      <PrimaryPanel {...this.state}/>
     </div>
   }
 });

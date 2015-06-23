@@ -1,0 +1,69 @@
+/* smartphones, iPhone, portrait 480x320 phones */
+@mobile-sm: ~"only screen and (min-width: 20rem)";
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@mobile-lg: ~"only screen and (min-width: 30rem)";
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@tablet-sm: ~"only screen and (min-width: 40rem)";
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@tablet-lg: ~"only screen and (min-width: 60rem)";
+/* big landscape tablets, laptops, and desktops */
+@desktop-sm: ~"only screen and (min-width: 64rem)";
+/* hi-res laptops and desktops */
+@desktop-lg: ~"only screen and (min-width: 80rem)";
+
+
+body {
+  font-size: 100%;
+  h1 {
+    font-size: 2rem;
+    line-height: 1.25;
+    @media @tablet-sm {
+      font-size: 2.5rem;
+      line-height: 1.125;
+    }
+    @media @tablet-lg {
+      font-size: 3rem;
+      line-height: 1.05;
+    }
+  }
+  h2 {
+    font-size: 1.625rem;
+    line-height: 1.15384615;
+    @media @tablet-sm {
+      font-size: 2rem;
+      line-height: 1.25;
+    }
+    @media @tablet-lg {
+      font-size: 2.25rem;
+      line-height: 1.25;
+    }
+  }
+  h3 {
+    font-size: 1.375rem;
+    line-height: 1.13636364;
+    @media @tablet-sm {
+      font-size: 1.5rem;
+      line-height: 1.25;
+    }
+    @media @tablet-lg {
+      font-size: 1.75rem;
+      line-height: 1.25;
+    }
+  }
+  h4 {
+    font-size: 1.125rem;
+    line-height: 1.11111111;
+    @media @tablet-sm {
+      font-size: 1.125rem;
+      line-height: 1.22222222;
+    }
+  }
+  blockquote {
+    font-size: 1.25rem;
+    line-height: 1.25;
+    @media @tablet-sm {
+      font-size: 1.5rem;
+      line-height: 1.45833333;
+    }
+  }
+}

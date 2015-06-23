@@ -20,6 +20,7 @@ export default Reflux.createStore({
       .query({longitude: lng})
       .end((err, res)=> {
         this.data = this.data.set('forecast', Immutable.fromJS(res.body));
+        this.trigger(this.data);
       });
   },
 });
