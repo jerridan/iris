@@ -56,7 +56,7 @@ let Geocode = React.createClass({
     }, {timeout: 5000});
   },
   render() {
-    return <div>
+    return <div className="location">
       {this.state.data.get('location')}
     </div>
   }

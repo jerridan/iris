@@ -1,1 +1,109 @@
 @import './setup';
+@import './material-design';
+
+.iris {
+  background: #fff;
+  width: 100%;
+  max-width: 31rem;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  .primary-panel {
+    background: @primary;
+    color: @text-icons;
+    .location {
+      padding: .1875rem;
+      background: @dark-primary;
+      font-size: .875rem;
+      &:before {
+        .material-icon(@icon: '\E0C8', @size: 1.125rem);
+        vertical-align: bottom;
+      }
+    }
+    .current {
+      padding: .1875em;
+      text-align: center;
+      .temperature, .weather-status, .temp-unit-select {
+        display: inline-block;
+        vertical-align: baseline;
+        padding: .25rem;
+      }
+      .temperature {
+        font-size: 5.5rem;
+      }
+      .weather-status {
+        text-align: left;
+        .weather-icon {
+          margin: 0 auto;
+          background: url('../less/svg/weather-cloudy.svg') no-repeat;
+          background-size: contain;
+          height: 4.5rem;
+          width: 4.5rem;
+          &.clear-day {
+            background-image: url('../less/svg/weather-sunny.svg');
+          }
+          &.clear-night {
+            background-image: url('../less/svg/weather-night.svg');
+          }
+          &.rain {
+            background-image: url('../less/svg/weather-pouring.svg');
+          }
+          &.snow {
+            background-image: url('../less/svg/weather-snowy.svg');
+          }
+          &.sleet {
+            background-image: url('../less/svg/weather-pouring.svg');
+          }
+          &.wind {
+            background-image: url('../less/svg/weather-windy.svg');
+          }
+          &.fog {
+            background-image: url('../less/svg/weather-cloudy.svg');
+          }
+          &.cloudy {
+            background-image: url('../less/svg/weather-cloudy.svg');
+          }
+          &.partly-cloudy-day {
+            background-image: url('../less/svg/weather-partlycloudy.svg');
+          }
+          &.partly-cloudy-night {
+            background-image: url('../less/svg/weather-night.svg');
+          }
+          &.hail {
+            background-image: url('../less/svg/weather-hail.svg');
+          }
+          &.thunderstorm {
+            background-image: url('../less/svg/weather-lightning.svg');
+          }
+
+        }
+        .summary {
+          font-size: .875rem;
+          text-align: center;
+        }
+      }
+      .material-radio();
+    }
+    .tab-menu {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .tab {
+        width: 20%;
+        text-align: center;
+        text-transform: uppercase;
+        cursor: pointer;
+        padding-bottom: 0.5rem;
+        color: @text-icons;
+        opacity: 0.7;
+        &.active {
+          opacity: 1;
+          border-bottom: .125rem solid @accent;
+        }
+      }
+    }
+  }
+}
