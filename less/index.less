@@ -106,4 +106,27 @@
       }
     }
   }
+  .secondary-panel {
+    .info-panel {
+      padding: .1875rem .5rem;
+      table {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        tr {
+          height: 2rem;
+          td {
+            color: @primary-text;
+            padding: 0.75rem 1.5rem;
+            &:last-child {
+              text-align: right;
+            }
+          }
+          &:nth-child(even) {
+            background-color: @light-primary;
+          }
+        }
+      }
+    }
+  }
 }

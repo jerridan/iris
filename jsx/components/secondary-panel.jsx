@@ -6,7 +6,10 @@ import DailyInfo from './daily-info.jsx';
 
 let SecondaryPanel = React.createClass({
   render() {
-    return <div>
+    if (null === this.props.forecastStore.get('forecast', null)) {
+      return false;
+    }
+    return <div className="secondary-panel">
       <DetailedInfo {...this.props}/>
       <HourlyInfo {...this.props}/>
       <DailyInfo {...this.props}/>
