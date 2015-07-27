@@ -12,5 +12,9 @@ pids
 *.pid
 *.seed
 
+js/index.js
+
 ## Private Data ##
 forecast_server.js
+
+config/*.json
