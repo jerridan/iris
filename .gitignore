@@ -14,3 +14,5 @@ pids
 
 ## Private Data ##
 forecast_server.js
+
+config/*.json
