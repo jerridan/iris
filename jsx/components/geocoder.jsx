@@ -1,35 +1,16 @@
 import React from 'react';
 import Immutable from 'immutable';
-import ReactScriptLoaderModule from 'react-script-loader';
 
 import forecastActions from '../actions/forecast';
 
-let ReactScriptLoaderMixin = ReactScriptLoaderModule.ReactScriptLoaderMixin;
-let ReactScriptLoader = ReactScriptLoaderModule.ReactScriptLoader;
-let scriptURL = 'https://maps.googleapis.com/maps/api/js?v=3.exp&callback=initializeMaps';
-
-window.initializeMaps = () => {
-  ReactScriptLoader.triggerOnScriptLoaded(scriptURL);
-};
-
-let Geocode = React.createClass({
-  mixins: [ReactScriptLoaderMixin],
+const Geocode = React.createClass({
   getInitialState() {
     return {
       data: Immutable.Map()
     };
   },
-  getScriptURL() {
-    return scriptURL;
-  },
-  deferOnScriptLoaded() {
-    return true;
-  },
-  onScriptLoaded() {
+  componentWillMount() {
     this.getGeolocation();
-  },
-  onScriptError() {
-    console.warn('Google Maps API script failed to load');
   },
   getForecast(lat, lng) {
     forecastActions.getForecast(lat, lng);
@@ -45,18 +26,18 @@ let Geocode = React.createClass({
             let location = results[2].formatted_address;
             this.setState({data: this.state.data.set('location', location)});
           } else {
-            console.warn('Google Maps API failed to get results for the geolocation');
+            console.error('Google Maps API failed to get results for the geolocation');
           }
         } else {
-          console.warn('Google Maps Geocoder failed with status:', status);
+          console.error('Google Maps Geocoder failed with status:', status);
         }
       }));
     }, (error)=> {
-      console.warn('ERROR(' + error.code + '): ' + error.message);
+      console.error('ERROR(' + error.code + '): ' + error.message);
     }, {timeout: 5000});
   },
   render() {
-    return <div className="location">
+    return <div className="location location-on-icon">
       {this.state.data.get('location')}
     </div>
   }

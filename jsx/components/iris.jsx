@@ -7,7 +7,7 @@ import SecondaryPanel from './secondary-panel.jsx';
 import forecastStore from '../stores/forecast';
 import viewStore from '../stores/view';
 
-let Iris = React.createClass({
+const Iris = React.createClass({
   mixins: [Reflux.connect(forecastStore, 'forecastStore'),
     Reflux.connect(viewStore, 'view')],
   render() {

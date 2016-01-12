@@ -1,24 +1,35 @@
+@import './normalize.css';
 @import './setup';
 @import './material-design';
 
+html, body, #app, .iris {
+  height: 100%;
+  overflow: hidden;
+}
+
 .iris {
+  margin: 0 auto;
   background: #fff;
-  width: 100%;
-  max-width: 31rem;
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 60rem;
+  max-width: 100%;
+  max-height: 41rem;
+  display: flex;
+  flex-flow: column;
+  @media @tablet-lg {
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+  }
+  @media @desktop-sm {
+    margin-top: 30px;
+  }
   .primary-panel {
     background: @primary;
     color: @text-icons;
+    flex: 0 1 auto;
     .location {
       padding: .1875rem;
       background: @dark-primary;
       font-size: .875rem;
       &:before {
-        .material-icon(@icon: '\E0C8', @size: 1.125rem);
         vertical-align: bottom;
       }
     }
@@ -35,7 +46,7 @@
       }
       .weather-status {
         text-align: left;
-        .weather-icon {
+        .weather-rep {
           margin: 0 auto;
           background: url('../less/svg/weather-cloudy.svg') no-repeat;
           background-size: contain;
@@ -84,7 +95,6 @@
           text-align: center;
         }
       }
-      .material-radio();
     }
     .tab-menu {
       width: 100%;
@@ -107,6 +117,8 @@
     }
   }
   .secondary-panel {
+    flex: 1 1 auto;
+    overflow: auto;
     .info-panel {
       padding: .1875rem .5rem;
       table {

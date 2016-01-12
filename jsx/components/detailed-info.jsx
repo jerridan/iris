@@ -1,7 +1,7 @@
 import React from 'react';
 import Immutable from 'immutable';
 
-let DetailedInfo = React.createClass({
+const DetailedInfo = React.createClass({
   getPrecipitationProb() {
     let pp = this.props.forecastStore.getIn(['forecast', 'currently', 'precipProbability'], null);
     if (pp) {
@@ -118,7 +118,6 @@ let DetailedInfo = React.createClass({
     if ('details' !== this.props.view.get('info_type')) {
       return false;
     }
-    console.log(this.props.forecastStore.get('forecast').toJS());
     return <div className="info-panel details">
       <table>
         <tbody>
@@ -161,14 +160,6 @@ let DetailedInfo = React.createClass({
         <tr>
           <td>Visibility</td>
           <td>{this.getVisibility()}</td>
-        </tr>
-        <tr>
-          <td>Nearest Storm</td>
-          <td>{this.getNearestStormDistance()}</td>
-        </tr>
-        <tr>
-          <td>Nearest Storm Bearing</td>
-          <td>{this.getNearestStormBearing()}</td>
         </tr>
         <tr>
           <td>Dew Point</td>

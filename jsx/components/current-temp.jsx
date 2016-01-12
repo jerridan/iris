@@ -4,10 +4,14 @@ import cx from 'classnames';
 
 import viewActions from '../actions/view';
 
-let currentTemp = React.createClass({
+const currentTemp = React.createClass({
   render() {
     if (null === this.props.forecastStore.get('forecast', null)) {
-      return false;
+      return (
+        <div className="current">
+          <div className="temperature">---</div>
+        </div>
+      )
     }
     let temperature = "";
     if (this.props.view.get('celsius', false)) {
@@ -18,16 +22,18 @@ let currentTemp = React.createClass({
     return <div className="current">
       <div className="temperature">{temperature + "°"}</div>
       <div className="weather-status">
-        <div className={cx("weather-icon",this.props.forecastStore.getIn(['forecast','currently','icon'],''))}/>
+        <div className={cx("weather-rep",this.props.forecastStore.getIn(['forecast','currently','icon'],''))}/>
         <div className="summary">{this.props.forecastStore.getIn(['forecast', 'currently', 'summary'])}</div>
       </div>
       <div className="temp-unit-select">
-        <input className="material-radio" checked={this.props.view.get('celsius', false)}
-               onChange={viewActions.toggleCelsius} type="radio" name="tempUnit" id="celsius"/>
-        <label htmlFor="celsius">C</label>
-        <input className="material-radio" checked={!this.props.view.get('celsius', false)}
-               onChange={viewActions.toggleCelsius} type="radio" name="tempUnit" id="fahrenheit"/>
-        <label htmlFor="fahrenheit">F</label>
+        <label className={cx("radio",{checked: this.props.view.get('celsius', false)})}>
+          <span>C</span>
+          <input onChange={viewActions.toggleCelsius} type="radio" name="tempUnit" id="celsius"/>
+        </label>
+        <label className={cx("radio",{checked: !this.props.view.get('celsius', false)})}>
+          <span>F</span>
+          <input onChange={viewActions.toggleCelsius} type="radio" name="tempUnit" id="fahrenheit"/>
+        </label>
       </div>
     </div>
   }
