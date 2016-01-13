@@ -1,5 +1,5 @@
 ## IRIS
-A simple, mobile-friendly weather web app built using ReactJS.
+A simple, mobile-friendly weather web app built using React.
 
 I built this app as a way to practice working with React, and gain experience with HTML5 Geolocation and the Google Maps API. So even if no one uses it, it has served its purpose.
 
