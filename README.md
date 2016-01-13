@@ -1,7 +1,7 @@
 ## IRIS
 A simple, mobile-friendly weather web app built using ReactJS.
 
-I built this app as a way to practice working with React, and gain experience with HTML5 Geolocation and the Google Maps API. So while I doubt anyone will use it, it has served its purpose.
+I built this app as a way to practice working with React, and gain experience with HTML5 Geolocation and the Google Maps API. So even if no one uses it, it has served its purpose.
 
 Iris displays detailed weather information (temperature, precipitation, humidity, air pressure, etc) for the current time. It does not display forecast information for future times/days. The styling is based on Google's Material Design.
 
