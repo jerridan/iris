@@ -1,7 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 
-var DEBUG = process.env.NODE_ENV !== 'production';
+var DEBUG = process.env.NODE_ENV === 'production';
 
 var plugins = [
   new webpack.optimize.OccurenceOrderPlugin()
