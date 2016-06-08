@@ -12,12 +12,8 @@ pids
 *.pid
 *.seed
 
-js/index.js
-
-# dev server
-/iris.js
-
 ## Private Data ##
 forecast_server.js
 
 config/*.json
+/config/server.js
