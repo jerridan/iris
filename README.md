@@ -12,7 +12,7 @@ Iris displays detailed weather information (temperature, precipitation, humidity
 4. Displays the retrieved data
 
 ### Working Demo
-Click [here](http://159.203.42.187/) to see a working demo. Note that in order for the app to work, you will need to allow it to access your location - this is not stored anywhere long term.
+Click [here](https://iris.jerridan.io/) to see a working demo. Note that in order for the app to work, you will need to allow it to access your location - this is not stored anywhere long term.
 
 ### Config
 If you are using the code base, copy config/forecast.json.sample to config/forecast.json and add your forecast.io API key
